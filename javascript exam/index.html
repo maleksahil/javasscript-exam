@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            /* background-color: #f9f9f9; */
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('./bg\ food.jpg');
+                background-size: cover;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #444;
+        }
+
+        form {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-width: 400px;
+            margin: 0 auto 20px auto;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            display: block;
+            width: calc(100% - 20px);
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #recipeList {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #recipeList>div {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #recipeList h3 {
+            margin: 0 0 10px;
+        }
+
+        #recipeList button {
+            margin-right: 10px;
+            display: inline-block;
+            width: auto;
+        }
+
+        #searchAndFilter {
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+            text-align: center;
+        }
+
+        #searchAndFilter input,
+        #searchAndFilter select {
+            margin: 10px 5px;
+            width: calc(50% - 20px);
+            display: inline-block;
+        }
+
+        @media (max-width: 600px) {
+
+            input,
+            textarea,
+            select,
+            button {
+                width: calc(100% - 20px);
+            }
+
+            #searchAndFilter input,
+            #searchAndFilter select {
+                width: calc(100% - 20px);
+                display: block;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Recipe Book</h1>
+    <form id="recipeForm">
+        <input type="text" id="recipeTitle" placeholder="Recipe Title" required>
+        <input type="text" id="recipeIngredients" placeholder="Ingredients (comma separated)" required>
+        <textarea id="recipeInstructions" placeholder="Instructions"></textarea>
+        <select id="recipeCuisine">
+            <option value="Italian">Italian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Indian">Indian</option>
+            <option value="Mexican">Mexican</option>
+        </select>
+        <button type="submit">Add Recipe</button>
+    </form>
+    <div id="recipeList"></div>
+    <div id="searchAndFilter">
+        <input type="text" id="searchTitle" placeholder="Search by Title">
+        <input type="text" id="searchIngredients" placeholder="Search by Ingredients">
+        <select id="filterCuisine">
+            <option value="">Filter by Cuisine</option>
+            <option value="Italian">Italian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Indian">Indian</option>
+            <option value="Mexican">Mexican</option>
+        </select>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
